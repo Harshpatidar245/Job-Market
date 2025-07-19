@@ -19,7 +19,7 @@ const Login = () => {
 
   const { login } = useAuth();
   const navigate = useNavigate();
-
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
   // Timer countdown for OTP resend
   useEffect(() => {
     let interval = null;
@@ -74,7 +74,7 @@ const Login = () => {
       setError("");
       setSuccess("");
 
-      const response = await axios.post(`${VITE_BACKEND_URL}/api/auth/send-email-otp`, { email });
+      const response = await axios.post(`${API_BASE_URL}/api/auth/send-email-otp`, { email });
 
       if (response.data.success) {
         setOtpSent(true);
