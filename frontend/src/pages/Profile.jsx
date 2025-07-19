@@ -208,7 +208,7 @@ const Profile = () => {
                 </div>
                 <div className="mt-3">
                   <a 
-                    href={`http://localhost:5000${profileData.resume.path}`} 
+                    href={`${process.env.REACT_APP_API_URL}${profileData.resume.path}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="btn btn-secondary"
